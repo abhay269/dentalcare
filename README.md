@@ -291,4 +291,4 @@ This project demonstrates:
 
 ---
 
-Built with ❤️ for B.Tech Computer Science Final Year Project
+Built with ❤️ for B.Tech Computer Science Second Year Project

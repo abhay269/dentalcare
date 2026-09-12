@@ -9,9 +9,19 @@ connectDB();
 
 const app = express();
 
-app.use(cors({ 
-  origin: ['http://localhost:5173', 'https://dentalcare-60y39iwr2-creepy2.vercel.app'], 
-  credentials: true 
+app.use(cors({
+  origin: function(origin, callback) {
+    const allowed = [
+      'http://localhost:5173',
+      /https:\/\/dentalcare.*\.vercel\.app/
+    ];
+    if (!origin || allowed.some(o => typeof o === 'string' ? o === origin : o.test(origin))) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
 }));
 app.use(express.json());
 app.use(morgan('dev'));

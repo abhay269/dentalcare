@@ -10,7 +10,7 @@ connectDB();
 const app = express();
 
 app.use(cors({ 
-  origin: ['http://localhost:5173', 'https://dentalcare-m602z0aa8-creepy2.vercel.app'], 
+  origin: ['http://localhost:5173', 'https://dentalcare-60y39iwr2-creepy2.vercel.app'], 
   credentials: true 
 }));
 app.use(express.json());
